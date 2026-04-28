@@ -3,82 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Health Hospital | Caring for You</title>
+    <title>City Health Hospital | Modern Healthcare</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
     <header>
         <nav class="navbar">
             <div class="logo">City<span>Health</span></div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#doctors">Doctors</a></li>
-                <li><a href="#contact">Contact</a></li>
                 <li><a href="#appointment" class="btn-nav">Book Now</a></li>
             </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
             </div>
         </nav>
     </header>
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Your Health is Our Priority</h1>
-            <p>Providing world-class medical services with a team of expert doctors.</p>
+            <h1>Expert Care, Close to Home</h1>
+            <p>Experience world-class healthcare with our dedicated medical professionals.</p>
             <div class="hero-btns">
-                <a href="#appointment" class="btn-primary">Book Appointment</a>
-                <a href="#services" class="btn-secondary">Our Services</a>
+                <a href="#appointment" class="btn-primary">Make Appointment</a>
+                <a href="#services" class="btn-secondary">Explore Services</a>
             </div>
         </div>
     </section>
 
     <section id="services" class="services">
-        <h2 class="section-title">Medical Services</h2>
+        <h2 class="section-title">Our Services</h2>
         <div class="services-container">
             <div class="service-card">
-                <i class="fas fa-ambulance"></i>
-                <h3>Emergency Care</h3>
-                <p>24/7 rapid response for critical medical conditions.</p>
+                <i class="fas fa-heartbeat"></i>
+                <h3>Cardiology</h3>
+                <p>Comprehensive heart care and advanced diagnostics.</p>
             </div>
             <div class="service-card">
-                <i class="fas fa-microscope"></i>
+                <i class="fas fa-user-md"></i>
+                <h3>Surgery</h3>
+                <p>Modern surgical procedures with minimally invasive options.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-flask"></i>
                 <h3>Laboratory</h3>
-                <p>Advanced diagnostic testing with precision results.</p>
-            </div>
-            <div class="service-card">
-                <i class="fas fa-pills"></i>
-                <h3>Pharmacy</h3>
-                <p>Fully stocked pharmacy with professional consultations.</p>
+                <p>Precise testing and quick results for better diagnosis.</p>
             </div>
         </div>
     </section>
 
     <section id="appointment" class="appointment">
         <div class="form-container">
-            <h2>Book an Appointment</h2>
+            <h2>Book Your Visit</h2>
             <form id="bookingForm">
-                <input type="text" id="name" placeholder="Full Name" required>
-                <input type="email" id="email" placeholder="Email Address" required>
-                <input type="date" id="date" required>
-                <select id="department">
-                    <option value="">Select Department</option>
-                    <option value="cardiology">Cardiology</option>
-                    <option value="pediatrics">Pediatrics</option>
-                    <option value="surgery">Surgery</option>
-                </select>
-                <button type="submit" class="btn-submit">Confirm Appointment</button>
+                <div class="input-group">
+                    <input type="text" id="name" placeholder="Your Full Name" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <input type="date" id="date" required>
+                </div>
+                <div class="input-group">
+                    <select id="department" required>
+                        <option value="">Select Department</option>
+                        <option value="General">General Consultation</option>
+                        <option value="Cardiology">Cardiology</option>
+                        <option value="Pediatrics">Pediatrics</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Confirm Booking</button>
             </form>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 City Health Hospital. All rights reserved.</p>
+        <p>&copy; 2026 City Health Hospital. Professional & Compassionate Care.</p>
     </footer>
 
     <script src="script.js"></script>

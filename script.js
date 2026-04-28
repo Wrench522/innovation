@@ -1,36 +1,56 @@
-// Mobile Menu Toggle
-const hamburger = document.querySelector('.hamburger');
-const navLinks = document.querySelector('.nav-links');
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Mobile Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
 
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
+    hamburger.addEventListener('click', () => {
+        // Toggle display between flex and none for mobile
+        if (navLinks.style.display === 'flex') {
+            navLinks.style.display = 'none';
+        } else {
+            navLinks.style.display = 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '70px';
+            navLinks.style.left = '0';
+            navLinks.style.width = '100%';
+            navLinks.style.background = '#fff';
+            navLinks.style.padding = '20px';
+            navLinks.style.boxShadow = '0 10px 10px rgba(0,0,0,0.1)';
+        }
+    });
 
-// Form Validation and Confirmation
-const bookingForm = document.getElementById('bookingForm');
+    // 2. Form Submission Handling
+    const bookingForm = document.getElementById('bookingForm');
 
-bookingForm.addEventListener('submit', (e) => {
-    e.preventDefault();
+    bookingForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent page reload
 
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const date = document.getElementById('date').value;
+        // Get values
+        const name = document.getElementById('name').value;
+        const dept = document.getElementById('department').value;
+        const date = document.getElementById('date').value;
 
-    if (name && email && date) {
-        // Simple success popup
-        alert(`Thank you, ${name}! Your appointment has been requested for ${date}. We will email you at ${email} to confirm.`);
-        bookingForm.reset();
-    } else {
-        alert("Please fill in all required fields.");
-    }
-});
+        // Simple Validation & Confirmation
+        if (name && dept && date) {
+            alert(`Success! Appointment confirmed for ${name} in the ${dept} department on ${date}.`);
+            bookingForm.reset(); // Clear form
+        } else {
+            alert("Please complete all fields.");
+        }
+    });
 
-// Smooth scroll implementation for browsers that don't support CSS smooth scroll
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    // 3. Smooth Scroll (Fallback for older browsers)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
         });
     });
 });
