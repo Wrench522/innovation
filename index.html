@@ -1,175 +1,86 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-
-<style>
-  body {
-    font-family: Arial;
-    background: #14a5c9;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .login-box {
-    background: rgb(187, 7, 157);
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-  }
-
-  button {
-    width: 100%;
-    padding: 10px;
-    background: #0a74da;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background: #095bb5;
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Health Hospital | Caring for You</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
 
-<div class="login-box">
-  <h2>Admin Login</h2>
+    <header>
+        <nav class="navbar">
+            <div class="logo">City<span>Health</span></div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#appointment" class="btn-nav">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
-  <form id="loginForm">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-  </form>
-</div>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Your Health is Our Priority</h1>
+            <p>Providing world-class medical services with a team of expert doctors.</p>
+            <div class="hero-btns">
+                <a href="#appointment" class="btn-primary">Book Appointment</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
 
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
-  e.preventDefault();
+    <section id="services" class="services">
+        <h2 class="section-title">Medical Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <i class="fas fa-ambulance"></i>
+                <h3>Emergency Care</h3>
+                <p>24/7 rapid response for critical medical conditions.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-microscope"></i>
+                <h3>Laboratory</h3>
+                <p>Advanced diagnostic testing with precision results.</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-pills"></i>
+                <h3>Pharmacy</h3>
+                <p>Fully stocked pharmacy with professional consultations.</p>
+            </div>
+        </div>
+    </section>
 
-  let formData = new FormData(this);
+    <section id="appointment" class="appointment">
+        <div class="form-container">
+            <h2>Book an Appointment</h2>
+            <form id="bookingForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="email" id="email" placeholder="Email Address" required>
+                <input type="date" id="date" required>
+                <select id="department">
+                    <option value="">Select Department</option>
+                    <option value="cardiology">Cardiology</option>
+                    <option value="pediatrics">Pediatrics</option>
+                    <option value="surgery">Surgery</option>
+                </select>
+                <button type="submit" class="btn-submit">Confirm Appointment</button>
+            </form>
+        </div>
+    </section>
 
-  fetch("login.php", {
-    method: "POST",
-    body: formData
-  })
-  .then(res => res.text())
-  .then(data => {
-    if(data === "success"){
-      alert("Login successful");
-      window.location.href = "dashboard.html";
-    } else {
-      alert("Invalid username or password");
-    }
-  });
-});
-</script>
+    <footer>
+        <p>&copy; 2026 City Health Hospital. All rights reserved.</p>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Login</title>
-
-<style>
-  body {
-    font-family: Arial;
-    background: #f4f4f4;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .login-box {
-    background: red;
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-
-  h2 {
-    text-align: center;
-  }
-
-  input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-  }
-
-  button {
-    width: 100%;
-    padding: 10px;
-    background: #0a74da;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background: #095bb5;
-  }
-</style>
-</head>
-
-<body>
-
-<div class="login-box">
-  <h2>Admin Login</h2>
-
-  <form id="loginForm">
-    <input type="text" name="username" placeholder="Username" required>
-    <input type="password" name="password" placeholder="Password" required>
-    <button type="submit">Login</button>
-  </form>
-</div>
-
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  let formData = new FormData(this);
-
-  fetch("login.php", {
-    method: "POST",
-    body: formData
-  })
-  .then(res => res.text())
-  .then(data => {
-    if(data === "success"){
-      alert("Login successful");
-      window.location.href = "dashboard.html";
-    } else {
-      alert("Invalid username or password");
-    }
-  });
-});
-</script>
-
-</body>
-</html>
->>>>>>> 432256598c7adc97316747e2819787087f457d7b
